@@ -1,0 +1,40 @@
+# Runs collect_snapshot.py every 30 minutes on weekdays, for free, on GitHub's
+# servers, and saves the new data files back into this repository.
+#
+# GitHub schedules use UTC time. 13:00-20:59 UTC covers 9:00am-4:00pm Eastern
+# in both summer and winter; the script itself skips runs outside 9:40am-3:55pm ET.
+# Note: GitHub can start scheduled runs a few minutes late. That's fine, because
+# the script records the exact time of every snapshot.
+
+name: collect-snapshots
+
+on:
+  schedule:
+    - cron: "5,35 13-20 * * 1-5"
+  workflow_dispatch: {}   # adds a "Run workflow" button for testing
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - run: python collect_snapshot.py
+
+      - name: Save new data to the repo
+        run: |
+          git config user.name "snapshot-bot"
+          git config user.email "snapshot-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase
+          git push

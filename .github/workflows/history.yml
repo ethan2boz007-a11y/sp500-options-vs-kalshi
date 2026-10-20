@@ -1,0 +1,39 @@
+# One-time download of past Kalshi S&P range markets (see download_history.py).
+# Run it from the Actions tab: "download-history" -> "Run workflow".
+
+name: download-history
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_days:
+        description: "How many past trading days to download"
+        default: "400"
+
+permissions:
+  contents: write
+
+jobs:
+  history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - run: python download_history.py --max-days ${{ inputs.max_days }}
+
+      - name: Save to the repo
+        if: always()
+        run: |
+          git config user.name "snapshot-bot"
+          git config user.email "snapshot-bot@users.noreply.github.com"
+          git add history || true
+          git diff --cached --quiet || git commit -m "Kalshi history download"
+          git pull --rebase
+          git push

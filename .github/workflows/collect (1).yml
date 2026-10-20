@@ -1,0 +1,43 @@
+# Starts run_loop.py on weekdays. Each run stays on and takes snapshots on its
+# own clock (see run_loop.py), so GitHub's delayed/skipped schedules matter less.
+#
+# Two starts per day (times are UTC):
+#   13:20 UTC = 9:20am EDT (8:20am EST): covers the morning
+#   16:50 UTC = 12:50pm EDT (11:50am EST): takes over until the 4pm close
+# A single run can last at most 6 hours, which is why there are two.
+# When the second starts, it cancels the first, so they never overlap.
+# If one start is late or skipped, the other still covers most of the day.
+
+name: collect-snapshots
+
+on:
+  schedule:
+    - cron: "20 13 * * 1-5"
+    - cron: "50 16 * * 1-5"
+  workflow_dispatch: {}   # "Run workflow" button (only does something during market hours)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snapshots
+  cancel-in-progress: true
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Take snapshots until the close
+        run: |
+          git config user.name "snapshot-bot"
+          git config user.email "snapshot-bot@users.noreply.github.com"
+          python run_loop.py

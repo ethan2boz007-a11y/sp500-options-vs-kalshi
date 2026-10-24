@@ -5,3 +5,65 @@
   2/3 2026-10-22: 800 quotes, total spent $0.0108
   3/3 2026-10-23: 800 quotes, total spent $0.0165
 Done. Total spent: $0.0165
+
+--- run at 2026-10-24 23:21 ---
+976 trading days in range, 973 still to download, cost cap $20.00
+  1/973 2022-12-01: 592 quotes, total spent $0.0044
+  2/973 2022-12-02: 736 quotes, total spent $0.0099
+  3/973 2022-12-05: 688 quotes, total spent $0.0150
+2022-12-26: price check failed: BentoClientError(request_id=None, http_status=422, message=symbology_invalid_request
+None of the symbols could be resolved
+documentation: https://databento.com/docs/api-reference-historical/basics/symbology)
+  20/973 2022-12-28: 640 quotes, total spent $0.1001
+  40/973 2023-01-27: 688 quotes, total spent $0.2007
+  60/973 2023-02-27: 784 quotes, total spent $0.3022
+  80/973 2023-03-27: 688 quotes, total spent $0.4098
+  100/973 2023-04-25: 640 quotes, total spent $0.5028
+  120/973 2023-05-23: 640 quotes, total spent $0.5987
+  140/973 2023-06-22: 672 quotes, total spent $0.6952
+  160/973 2023-07-21: 768 quotes, total spent $0.7901
+  180/973 2023-08-18: 800 quotes, total spent $0.8933
+  200/973 2023-09-18: 640 quotes, total spent $0.9987
+2023-09-30: price check failed: BentoClientError(request_id=None, http_status=422, message=symbology_invalid_request
+None of the symbols could be resolved
+documentation: https://databento.com/docs/api-reference-historical/basics/symbology)
+  220/973 2023-10-13: 800 quotes, total spent $1.1057
+  240/973 2023-11-10: 672 quotes, total spent $1.2115
+  260/973 2023-12-11: 608 quotes, total spent $1.3043
+  280/973 2024-01-10: 608 quotes, total spent $1.4025
+  300/973 2024-02-08: 640 quotes, total spent $1.4997
+  320/973 2024-03-08: 736 quotes, total spent $1.6005
+  340/973 2024-04-08: 688 quotes, total spent $1.7044
+  360/973 2024-05-06: 576 quotes, total spent $1.8161
+  380/973 2024-06-04: 672 quotes, total spent $1.9182
+  400/973 2024-07-03: 312 quotes, total spent $2.0143
+  420/973 2024-08-01: 800 quotes, total spent $2.1250
+  440/973 2024-08-29: 720 quotes, total spent $2.2346
+  460/973 2024-09-27: 704 quotes, total spent $2.3411
+  480/973 2024-10-25: 736 quotes, total spent $2.4486
+  500/973 2024-11-22: 704 quotes, total spent $2.5563
+  520/973 2024-12-23: 800 quotes, total spent $2.6611
+  540/973 2025-01-24: 704 quotes, total spent $2.7679
+  560/973 2025-02-24: 798 quotes, total spent $2.8759
+  580/973 2025-03-24: 763 quotes, total spent $2.9867
+  600/973 2025-04-22: 799 quotes, total spent $3.0952
+  620/973 2025-05-20: 699 quotes, total spent $3.1892
+  640/973 2025-06-18: 768 quotes, total spent $3.2845
+  660/973 2025-07-18: 704 quotes, total spent $3.3766
+  680/973 2025-08-15: 784 quotes, total spent $3.4739
+  700/973 2025-09-15: 672 quotes, total spent $3.5700
+  720/973 2025-10-13: 800 quotes, total spent $3.6696
+  740/973 2025-11-10: 752 quotes, total spent $3.7743
+  760/973 2025-12-10: 704 quotes, total spent $3.8801
+  780/973 2026-01-12: 672 quotes, total spent $3.9821
+  800/973 2026-02-10: 720 quotes, total spent $4.0858
+  820/973 2026-03-11: 800 quotes, total spent $4.1974
+  840/973 2026-04-09: 480 quotes, total spent $4.3053
+  860/973 2026-05-07: 768 quotes, total spent $4.4070
+  880/973 2026-06-05: 800 quotes, total spent $4.5159
+  900/973 2026-07-08: 800 quotes, total spent $4.6292
+  920/973 2026-08-05: 768 quotes, total spent $4.7384
+  940/973 2026-09-02: 800 quotes, total spent $4.8473
+  960/973 2026-10-01: 800 quotes, total spent $4.9553
+  973/973 2026-10-20: 800 quotes, total spent $5.0249
+Done. Total spent: $5.0249

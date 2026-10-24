@@ -1,0 +1,49 @@
+# Downloads past SPX option bid/ask quotes from Databento (see databento_download.py).
+# Needs the repository secret DATABENTO_API_KEY. Checks the price before each day
+# and stops at the cost cap.
+
+name: databento-download
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "First date (YYYY-MM-DD)"
+        default: "2026-10-21"
+      end:
+        description: "Last date (YYYY-MM-DD)"
+        default: "2026-10-23"
+      max_cost:
+        description: "Stop if total cost would pass this many dollars"
+        default: "20"
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt databento
+
+      - name: Download quotes
+        env:
+          DATABENTO_API_KEY: ${{ secrets.DATABENTO_API_KEY }}
+        run: python databento_download.py --start ${{ inputs.start }} --end ${{ inputs.end }} --max-cost ${{ inputs.max_cost }}
+
+      - name: Save to the repo
+        if: always()
+        run: |
+          git config user.name "snapshot-bot"
+          git config user.email "snapshot-bot@users.noreply.github.com"
+          git add databento || true
+          git diff --cached --quiet || git commit -m "Databento download"
+          git pull --rebase
+          git push

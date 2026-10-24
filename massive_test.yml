@@ -1,0 +1,43 @@
+# Test download of past SPX option prices from Massive (see massive_test.py).
+# Needs the repository secret MASSIVE_API_KEY.
+# Run it from the Actions tab: "massive-test" -> "Run workflow".
+
+name: massive-test
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Dates to test, separated by spaces"
+        default: "2026-10-21 2026-10-22 2026-10-23"
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Download test data
+        env:
+          MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
+        run: python massive_test.py ${{ inputs.days }}
+
+      - name: Save to the repo
+        if: always()
+        run: |
+          git config user.name "snapshot-bot"
+          git config user.email "snapshot-bot@users.noreply.github.com"
+          git add massive || true
+          git diff --cached --quiet || git commit -m "Massive test download"
+          git pull --rebase
+          git push

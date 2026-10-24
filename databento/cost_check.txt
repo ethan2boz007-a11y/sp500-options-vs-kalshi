@@ -1,0 +1,52 @@
+Dataset range: {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z', 'schema': {'cmbp-1': {'start': '2023-03-28T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'cbbo-1s': {'start': '2025-02-20T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'cbbo-1m': {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'tcbbo': {'start': '2023-03-28T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'trades': {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'ohlcv-1s': {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'ohlcv-1m': {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'ohlcv-1h': {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'ohlcv-1d': {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'statistics': {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'status': {'start': '2024-07-17T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}, 'definition': {'start': '2013-04-01T00:00:00.000000000Z', 'end': '2026-10-24T00:00:00.000000000Z'}}}
+Trading days in 2023-01-01 to 2024-10-31: 462
+2023-01-03 ohlcv-1m: 68 options -> $0.1144
+2023-01-03 cbbo-1m: 68 options -> $0.0039
+2023-02-01 ohlcv-1m: 68 options -> $0.1453
+2023-02-01 cbbo-1m: 68 options -> $0.0030
+2023-03-01 ohlcv-1m: 68 options -> $0.1131
+2023-03-01 cbbo-1m: 68 options -> $0.0039
+2023-04-03 ohlcv-1m: 68 options -> $0.0930
+2023-04-03 cbbo-1m: 68 options -> $0.0028
+2023-05-01 ohlcv-1m: 68 options -> $0.0929
+2023-05-01 cbbo-1m: 68 options -> $0.0034
+2023-06-01 ohlcv-1m: 68 options -> $0.1050
+2023-06-01 cbbo-1m: 68 options -> $0.0034
+2023-07-03 ohlcv-1m: 68 options -> $0.0415
+2023-07-03 cbbo-1m: 68 options -> $0.0019
+2023-08-01 ohlcv-1m: 68 options -> $0.0790
+2023-08-01 cbbo-1m: 68 options -> $0.0034
+2023-09-01 ohlcv-1m: 68 options -> $0.0969
+2023-09-01 cbbo-1m: 68 options -> $0.0040
+2023-10-02 ohlcv-1m: 68 options -> $0.1060
+2023-10-02 cbbo-1m: 68 options -> $0.0041
+2023-11-01 ohlcv-1m: 68 options -> $0.1266
+2023-11-01 cbbo-1m: 68 options -> $0.0041
+2023-12-01 ohlcv-1m: 68 options -> $0.0997
+2023-12-01 cbbo-1m: 68 options -> $0.0039
+2024-01-02 ohlcv-1m: 68 options -> $0.0944
+2024-01-02 cbbo-1m: 68 options -> $0.0041
+2024-02-01 ohlcv-1m: 68 options -> $0.1061
+2024-02-01 cbbo-1m: 68 options -> $0.0039
+2024-03-01 ohlcv-1m: 68 options -> $0.1088
+2024-03-01 cbbo-1m: 68 options -> $0.0039
+2024-04-01 ohlcv-1m: 68 options -> $0.0904
+2024-04-01 cbbo-1m: 68 options -> $0.0041
+2024-05-01 ohlcv-1m: 68 options -> $0.1526
+2024-05-01 cbbo-1m: 68 options -> $0.0041
+2024-06-03 ohlcv-1m: 68 options -> $0.1135
+2024-06-03 cbbo-1m: 68 options -> $0.0041
+2024-07-01 ohlcv-1m: 68 options -> $0.0992
+2024-07-01 cbbo-1m: 68 options -> $0.0040
+2024-08-01 ohlcv-1m: 68 options -> $0.1665
+2024-08-01 cbbo-1m: 68 options -> $0.0041
+2024-09-03 ohlcv-1m: 68 options -> $0.1333
+2024-09-03 cbbo-1m: 68 options -> $0.0041
+2024-10-01 ohlcv-1m: 68 options -> $0.1455
+2024-10-01 cbbo-1m: 68 options -> $0.0041
+
+ohlcv-1m: average $0.1102 per day -> about $50.89 for all 462 days
+cbbo-1m: average $0.0037 per day -> about $1.72 for all 462 days
+(The free credit for new accounts is $125.)
+Full month 2023-12 ohlcv-1m: 1360 symbols -> $5.78
+Full month 2023-12 cbbo-1m: 1360 symbols -> $0.62

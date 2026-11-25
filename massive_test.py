@@ -52,10 +52,10 @@ def request(path, params, key):
     for base in BASES:
         for attempt in range(4):
             try:
-                r = requests.get(base + path, params={**params, "apiKey": key},
+                r = requests.get(base + path, params=params,
                                  headers={"Authorization": f"Bearer {key}"}, timeout=30)
             except requests.RequestException as e:
-                log(f"  network error on {base}: {e}")
+                log(f"  network error on {base}: {type(e).__name__}")
                 break
             time.sleep(WAIT)
             if r.status_code == 429:
